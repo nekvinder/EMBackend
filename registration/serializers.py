@@ -4,5 +4,5 @@ from . models import Registration
 class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Registration
-        fields = ['id','fullname','mobile','email','registration_type','user_id','group_id']
+        fields = ['id','fullname','mobile','email','registration_type','idcard','group_id']
         
