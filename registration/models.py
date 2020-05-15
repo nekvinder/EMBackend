@@ -18,7 +18,7 @@ class Registration(models.Model):
     registration_type = models.IntegerField()
     user_id = models.ForeignKey(IdCard, on_delete=models.SET_NULL, null=True)
     group_id = models.ForeignKey(Group, on_delete=models.SET_NULL, null=True)
-
+#added comments
     
     def __str__(self):
         return self.fullname
