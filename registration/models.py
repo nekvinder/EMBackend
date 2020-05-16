@@ -16,7 +16,7 @@ class Registration(models.Model):
     mobile = models.CharField(max_length=10)
     email = models.EmailField(max_length=100)
     registration_type = models.IntegerField()
-    user_id = models.ForeignKey(IdCard, on_delete=models.SET_NULL, null=True)
+    idcard = models.ForeignKey(IdCard, on_delete=models.SET_NULL, null=True)
     group_id = models.ForeignKey(Group, on_delete=models.SET_NULL, null=True)
 #added comments
     
