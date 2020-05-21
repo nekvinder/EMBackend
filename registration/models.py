@@ -8,7 +8,9 @@ class IdCard(models.Model):
 
 class Group(models.Model):
     name = models.CharField(max_length=100, blank=True, unique=True)
-
+    
+    def __str__(self):
+        return self.name
 
 
 class Registration(models.Model):
