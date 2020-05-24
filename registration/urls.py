@@ -6,6 +6,7 @@ router = routers.DefaultRouter()
 router.register('registration',views.RegistrationView)
 router.register('IdCard',views.IdCardView)
 router.register('Group',views.GroupView)
+router.register('Login',views.LoginView)
 
 
 urlpatterns = [

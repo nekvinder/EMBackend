@@ -1,7 +1,6 @@
 from rest_framework import serializers
-from . models import Registration
-from . models import IdCard
-from . models import Group
+from . models import *
+
 
 class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,4 +18,10 @@ class GroupSerializer(serializers.ModelSerializer):
     class  Meta:
         model = Group
         fields = ['name']
+
+class LoginSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Login
+        fields = ['id','name','email','password']
 

@@ -1,6 +1,14 @@
 from django.db import models
 
 # Create your models here.
+
+class TimeStampMixin(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
 class IdCard(models.Model):
     # id = models.CharField(max_length=100, blank=True, unique=True, primary_key=True)
     imagepath = models.FileField(upload_to='registration/')
@@ -13,7 +21,7 @@ class Group(models.Model):
         return self.name
 
 
-class Registration(models.Model):
+class Registration(TimeStampMixin):
     fullname = models.CharField(max_length=100)
     mobile = models.CharField(max_length=10)
     email = models.EmailField(max_length=100)
@@ -24,3 +32,11 @@ class Registration(models.Model):
     
     def __str__(self):
         return self.fullname
+
+class Login(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    password = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name

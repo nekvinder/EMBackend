@@ -1,11 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from . models import Registration
-from . models import IdCard
-from . models import Group
-from . serializers import RegistrationSerializer
-from . serializers import IdCardSerializer
-from . serializers import GroupSerializer
+from . models import *
+from . serializers import *
+
 
 class RegistrationView(viewsets.ModelViewSet):
     queryset = Registration.objects.all()
@@ -18,4 +15,9 @@ class IdCardView(viewsets.ModelViewSet):
 class GroupView(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+    
+class LoginView(viewsets.ModelViewSet):
+    queryset = Login.objects.all()
+    serializer_class = LoginSerializer
     
