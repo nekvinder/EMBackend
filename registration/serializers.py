@@ -5,23 +5,24 @@ from . models import *
 class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Registration
-        fields = ['id','fullname','mobile','email','registration_type','idcard','group_id']
-        
+        fields = ['id', 'url', 'fullname', 'mobile', 'email',
+                  'registration_type', 'idcard', 'group_id']
+
 
 class IdCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = IdCard
-        fields = ['id','imagepath']
+        fields = ['id', 'url', 'imagepath']
 
 
 class GroupSerializer(serializers.ModelSerializer):
-    class  Meta:
+    class Meta:
         model = Group
-        fields = ['name']
+        fields = ['name', 'id', 'url']
+
 
 class LoginSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Login
-        fields = ['id','name','email','password']
-
+        fields = ['id', 'url', 'name', 'email', 'password']
