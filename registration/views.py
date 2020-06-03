@@ -17,7 +17,7 @@ class IdCardView(viewsets.ModelViewSet):
     queryset = IdCard.objects.all()
     serializer_class = IdCardSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['imagepath']
+    # filterset_fields = ['imagepath']
 
 
 class GroupView(viewsets.ModelViewSet):
