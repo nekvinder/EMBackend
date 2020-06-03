@@ -6,7 +6,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Registration
         fields = ['id', 'url', 'fullname', 'mobile', 'email',
-                  'registration_type', 'idcard', 'group_id']
+                  'registration_type', 'idcard', 'group_id', 'created_at', 'created_at', 'updated_at']
 
 
 class IdCardSerializer(serializers.ModelSerializer):
