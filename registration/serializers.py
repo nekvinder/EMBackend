@@ -26,3 +26,10 @@ class LoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = Login
         fields = ['id', 'url', 'name', 'email', 'password']
+
+
+class EventSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Event
+        fields = ['id', 'url', 'name', 'description', 'start', 'end']

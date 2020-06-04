@@ -9,24 +9,33 @@ class TimeStampMixin(models.Model):
         abstract = True
 
 
+class Login(models.Model):
+    name = models.TextField(max_length=50)
+    email = models.EmailField(max_length=50)
+    password = models.TextField(max_length=50)
+
+
+class Event(TimeStampMixin):
+    name = models.TextField(max_length=100)
+    description = models.TextField(max_length=1000)
+    start = models.DateTimeField(auto_now=True)
+    end = models.DateTimeField()
+
+
+class Group(models.Model):
+    name = models.TextField(max_length=50, blank=True, unique=True)
+    eventId = models.ForeignKey(
+        Event, on_delete=models.PROTECT)
+
+
 class IdCard(models.Model):
     imagepath = models.FileField(upload_to='registration/')
 
 
-class Group(models.Model):
-    name = models.CharField(max_length=100, blank=True, unique=True)
-
-
 class Registration(TimeStampMixin):
-    fullname = models.CharField(max_length=100)
-    mobile = models.CharField(max_length=10)
-    email = models.EmailField(max_length=100)
+    fullname = models.TextField(max_length=50)
+    mobile = models.TextField(max_length=10)
+    email = models.EmailField(max_length=50)
     registration_type = models.IntegerField()
     idcard = models.ForeignKey(IdCard, on_delete=models.SET_NULL, null=True)
     group_id = models.ForeignKey(Group, on_delete=models.SET_NULL, null=True)
-
-
-class Login(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100)
-    password = models.CharField(max_length=50)
