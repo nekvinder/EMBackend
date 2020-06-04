@@ -18,7 +18,7 @@ class Login(models.Model):
 class Event(TimeStampMixin):
     name = models.TextField(max_length=100)
     description = models.TextField(max_length=1000)
-    start = models.DateTimeField(auto_now=True)
+    start = models.DateTimeField()
     end = models.DateTimeField()
 
 
