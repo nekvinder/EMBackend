@@ -33,3 +33,10 @@ class LoginView(viewsets.ModelViewSet):
     serializer_class = LoginSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['name', 'email', 'password']
+
+
+class EventView(viewsets.ModelViewSet):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['name', 'start', 'end']
