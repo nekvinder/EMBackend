@@ -24,7 +24,7 @@ class GroupView(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['name']
+    filterset_fields = ['name','eventId']
 
 
 class LoginView(viewsets.ModelViewSet):
