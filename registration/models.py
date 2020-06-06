@@ -20,6 +20,7 @@ class Event(TimeStampMixin):
     description = models.TextField(max_length=1000)
     start = models.DateTimeField()
     end = models.DateTimeField()
+    active = models.BooleanField(default=True)
 
 
 class Group(models.Model):
