@@ -26,6 +26,7 @@ class Group(models.Model):
     name = models.TextField(max_length=50, blank=True, unique=True)
     eventId = models.ForeignKey(
         Event, on_delete=models.PROTECT)
+    registration_type = models.IntegerField()
 
 
 class IdCard(models.Model):

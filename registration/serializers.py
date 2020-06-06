@@ -18,7 +18,7 @@ class IdCardSerializer(serializers.ModelSerializer):
 class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
-        fields = ['name', 'id', 'url','eventId']
+        fields = ['name', 'id', 'url', 'eventId', 'registration_type']
 
 
 class LoginSerializer(serializers.ModelSerializer):
