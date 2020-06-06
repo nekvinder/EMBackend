@@ -39,4 +39,4 @@ class EventView(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['name', 'start', 'end']
+    filterset_fields = ['name', 'start', 'end', 'active']
