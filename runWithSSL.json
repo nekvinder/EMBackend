@@ -2,7 +2,7 @@
   apps: [{
     name: "eventBackend",
     script: "manage.py",
-    args: "runsslserver 0.0.0.0:8000 --certificate /etc/letsencrypt/live/nekvinder.com/cert.pem --key /etc/letsencrypt/live/nekvinder.com/privkey.pem",
+    args: "runsslserver 0.0.0.0:8000 --certificate /etc/letsencrypt/live/nekvinder.com/fullchain.pem --key /etc/letsencrypt/live/nekvinder.com/privkey.pem",
     exec_mode: "fork",
     instances: "1",
     wait_ready: true,
